@@ -2,10 +2,11 @@
 
 Proyecto Entry. Startup para facilitar la entrada a las discotecas y el pago del cover.
 
-###TODO:
+## MVP
+### TODO:
 - [x] Crear proyecto
 - [x] Crear modelo de dominio
-- [] Diseñar prototipo Figma
+- [x] Diseñar prototipo Figma
 - [] Acoplar Firebase
 - [] Implementar modelos
 - [] Implementar logica de autenticación
