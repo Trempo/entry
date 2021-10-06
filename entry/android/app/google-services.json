@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "508045167864",
+    "project_id": "entry-efd6b",
+    "storage_bucket": "entry-efd6b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508045167864:android:4d420f14054eba8ab87f0d",
+        "android_client_info": {
+          "package_name": "com.trempo.entry"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "508045167864-719o6075u0moo5vubp89bdcrum1lojnv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUNL6ye3p176WC6QmKAX6X_IFAvP5A-Rw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "508045167864-719o6075u0moo5vubp89bdcrum1lojnv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
