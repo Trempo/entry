@@ -14,3 +14,31 @@ TextStyle tituloEntryLoginRegister = TextStyle(
   fontSize: 64,
   color: magnolia,
 );
+
+TextStyle rubik18darkPurple = TextStyle(
+  fontFamily: Rubik,
+  fontWeight: FontWeight.w400,
+  fontSize: 18,
+  color: darkPurple,
+);
+
+TextStyle rubik18magnolia = TextStyle(
+  fontFamily: Rubik,
+  fontWeight: FontWeight.w400,
+  fontSize: 18,
+  color: magnolia,
+);
+
+TextStyle rubik18amaranth = TextStyle(
+  fontFamily: Rubik,
+  fontWeight: FontWeight.w400,
+  fontSize: 18,
+  color: amaranth,
+);
+
+TextStyle rubik13magnolia = TextStyle(
+  fontFamily: Rubik,
+  fontWeight: FontWeight.w400,
+  fontSize: 13,
+  color: magnolia,
+);
