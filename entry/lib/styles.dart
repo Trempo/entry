@@ -42,3 +42,12 @@ TextStyle rubik13magnolia = TextStyle(
   fontSize: 13,
   color: magnolia,
 );
+
+List<BoxShadow> shadowInputFields = [
+  BoxShadow(
+    color: Colors.black.withOpacity(0.25),
+    spreadRadius: 0,
+    blurRadius: 4,
+    offset: Offset(0, 4), // changes position of shadow
+  )
+];

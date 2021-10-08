@@ -34,9 +34,9 @@ class _AuthenticationState extends State<Authentication> {
                 margin: const EdgeInsets.fromLTRB(0, 0, 0, 41),
                 padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
                 decoration: BoxDecoration(
-                  color: magnolia,
-                  borderRadius: BorderRadius.circular(15),
-                ),
+                    color: magnolia,
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: shadowInputFields),
                 child: TextFormField(
                   style: rubik18darkPurple,
                   controller: _emailField,
@@ -54,9 +54,9 @@ class _AuthenticationState extends State<Authentication> {
                 margin: EdgeInsets.fromLTRB(0, 0, 0, 12),
                 padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
                 decoration: BoxDecoration(
-                  color: magnolia,
-                  borderRadius: BorderRadius.circular(15),
-                ),
+                    color: magnolia,
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: shadowInputFields),
                 child: TextFormField(
                   style: rubik18darkPurple,
                   controller: _passwordField,
@@ -87,9 +87,9 @@ class _AuthenticationState extends State<Authentication> {
                   padding: EdgeInsets.fromLTRB(0, 16, 0, 16),
                   width: MediaQuery.of(context).size.width / 2.76,
                   decoration: BoxDecoration(
-                    color: amaranth,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
+                      color: amaranth,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: shadowInputFields),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
