@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:entry/models/cliente.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:intl/intl.dart';
 
 Future<bool> signIn(String email, String password) async {
   try {
@@ -13,10 +15,27 @@ Future<bool> signIn(String email, String password) async {
   }
 }
 
-Future<bool> register(String email, String password) async {
+Future<bool> register(String email, String password, String nombre, int cedula,
+    String dob) async {
+  var cliente = {
+    "email": email,
+    "nombre": nombre,
+    "cedula": cedula,
+    "dob": dob
+  };
   try {
     await FirebaseAuth.instance
         .createUserWithEmailAndPassword(email: email, password: password);
+    try {
+      String uid = FirebaseAuth.instance.currentUser.uid;
+      DocumentReference documentReference =
+          FirebaseFirestore.instance.collection('users').doc(uid);
+      FirebaseFirestore.instance.runTransaction((transaction) async {
+        transaction.set(documentReference, cliente);
+      });
+    } catch (e) {
+      print(e);
+    }
     return true;
   } on FirebaseAuthException catch (e) {
     //TODO: Implementar error handling y clientside verification
@@ -28,8 +47,8 @@ Future<bool> register(String email, String password) async {
     return false;
   } catch (e) {
     print(e.toString());
-    return false;
   }
+  return false;
 }
 
 bool isLoggedIn() {

@@ -15,6 +15,7 @@ class Authentication extends StatefulWidget {
 class _AuthenticationState extends State<Authentication> {
   final TextEditingController _emailField = TextEditingController();
   final TextEditingController _passwordField = TextEditingController();
+  var visibilityPW = false;
 
   @override
   Widget build(BuildContext context) {
@@ -64,13 +65,22 @@ class _AuthenticationState extends State<Authentication> {
                 child: TextFormField(
                   style: rubik18darkPurple,
                   controller: _passwordField,
-                  obscureText: true,
+                  obscureText: !visibilityPW,
                   decoration: InputDecoration(
+                      focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: amaranth, width: 3)),
                       labelText: 'Contraseña',
                       labelStyle: rubik18darkPurple,
-                      suffixIcon: Icon(
-                        Icons.password_outlined,
-                        color: darkPurple,
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          visibilityPW
+                              ? Icons.visibility_outlined
+                              : Icons.visibility_off_outlined,
+                          color: darkPurple,
+                        ),
+                        onPressed: () => setState(() {
+                          visibilityPW = !visibilityPW;
+                        }),
                       )),
                 ),
               ),
@@ -91,12 +101,12 @@ class _AuthenticationState extends State<Authentication> {
                     bool shouldNavigate =
                         await signIn(_emailField.text, _passwordField.text);
                     if (shouldNavigate) {
-                      Navigator.pushNamed(context, HomeRoute);
+                      _loginTap(context);
                     }
                   },
                   child: Container(
-                      margin: EdgeInsets.fromLTRB(0, 14, 0, 40),
-                      padding: EdgeInsets.fromLTRB(0, 16, 0, 16),
+                      margin: const EdgeInsets.fromLTRB(0, 14, 0, 40),
+                      padding: const EdgeInsets.fromLTRB(0, 16, 0, 16),
                       width: MediaQuery.of(context).size.width / 2.76,
                       decoration: BoxDecoration(
                           color: amaranth,
@@ -126,6 +136,10 @@ class _AuthenticationState extends State<Authentication> {
             ],
           )),
     );
+  }
+
+  void _loginTap(BuildContext context) {
+    Navigator.pushNamed(context, HomeRoute);
   }
 
   void _registerTap(BuildContext context) {

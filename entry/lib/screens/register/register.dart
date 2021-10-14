@@ -1,3 +1,5 @@
+import 'package:entry/app.dart';
+import 'package:entry/net/flutterfire.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -134,7 +136,7 @@ class _RegisterState extends State<Register> {
                     labelStyle: rubik18darkPurple,
                     suffixIcon: IconButton(
                       icon: Icon(
-                        visibilityConfirmPW
+                        visibilityPW
                             ? Icons.visibility_outlined
                             : Icons.visibility_off_outlined,
                         color: darkPurple,
@@ -233,23 +235,36 @@ class _RegisterState extends State<Register> {
                     )),
               ),
             ),
-            Container(
-                margin: EdgeInsets.fromLTRB(0, 14, 0, 35),
-                padding: EdgeInsets.fromLTRB(0, 16, 0, 16),
-                width: MediaQuery.of(context).size.width / 2.76,
-                decoration: BoxDecoration(
-                    color: amaranth,
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: shadowInputFields),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Registrarse',
-                      style: rubik18magnolia,
-                    ),
-                  ],
-                )),
+            MaterialButton(
+              onPressed: () async {
+                bool shouldNavigate = await register(
+                    _emailField.text,
+                    _passwordField.text,
+                    _nameField.text,
+                    int.parse(_cedulaField.text),
+                    _dobField.text);
+                if (shouldNavigate) {
+                  _registerTap(context);
+                }
+              },
+              child: Container(
+                  margin: const EdgeInsets.fromLTRB(0, 14, 0, 35),
+                  padding: const EdgeInsets.fromLTRB(0, 16, 0, 16),
+                  width: MediaQuery.of(context).size.width / 2.76,
+                  decoration: BoxDecoration(
+                      color: amaranth,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: shadowInputFields),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Registrarse',
+                        style: rubik18magnolia,
+                      ),
+                    ],
+                  )),
+            ),
             Container(
               width: MediaQuery.of(context).size.width / 1.38,
               alignment: Alignment.center,
@@ -263,5 +278,9 @@ class _RegisterState extends State<Register> {
         ),
       ),
     ));
+  }
+
+  void _registerTap(BuildContext context) {
+    Navigator.pushNamed(context, HomeRoute);
   }
 }
