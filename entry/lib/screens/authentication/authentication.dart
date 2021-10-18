@@ -139,10 +139,10 @@ class _AuthenticationState extends State<Authentication> {
   }
 
   void _loginTap(BuildContext context) {
-    Navigator.pushNamed(context, HomeRoute);
+    Navigator.pushNamed(context, homeRoute);
   }
 
   void _registerTap(BuildContext context) {
-    Navigator.pushNamed(context, RegisterRoute);
+    Navigator.pushNamed(context, registerRoute);
   }
 }

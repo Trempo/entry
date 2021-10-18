@@ -6,7 +6,7 @@ import 'package:intl/intl.dart';
 import '../../styles.dart';
 
 class Register extends StatefulWidget {
-  Register({Key? key}) : super(key: key);
+  const Register({Key? key}) : super(key: key);
 
   @override
   _RegisterState createState() => _RegisterState();
@@ -15,7 +15,6 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   var visibilityPW = false;
   var visibilityConfirmPW = false;
-  var _dob;
   final TextEditingController _emailField = TextEditingController();
   final TextEditingController _nameField = TextEditingController();
   final TextEditingController _passwordField = TextEditingController();
@@ -281,6 +280,6 @@ class _RegisterState extends State<Register> {
   }
 
   void _registerTap(BuildContext context) {
-    Navigator.pushNamed(context, HomeRoute);
+    Navigator.pushNamed(context, homeRoute);
   }
 }

@@ -2,14 +2,12 @@ import 'package:entry/net/flutterfire.dart';
 import 'package:entry/screens/authentication/authentication.dart';
 import 'package:entry/screens/home/home.dart';
 import 'package:entry/screens/register/register.dart';
-import 'package:entry/styles.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-const RegisterRoute = '/register';
-const AuthenticationRoute = '/authentication';
-const HomeRoute = '/';
+const registerRoute = '/register';
+const authenticationRoute = '/authentication';
+const homeRoute = '/';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -37,13 +35,13 @@ class App extends StatelessWidget {
           settings.arguments as Map<String, dynamic>?;
       Widget screen;
       switch (settings.name) {
-        case AuthenticationRoute:
+        case authenticationRoute:
           screen = Authentication();
           break;
-        case RegisterRoute:
+        case registerRoute:
           screen = Register();
           break;
-        case HomeRoute:
+        case homeRoute:
           screen = isLoggedIn() ? Home() : Authentication();
           break;
         default:

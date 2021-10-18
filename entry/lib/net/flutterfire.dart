@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:entry/models/cliente.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:intl/intl.dart';
 
 Future<bool> signIn(String email, String password) async {
   try {
@@ -27,12 +25,16 @@ Future<bool> register(String email, String password, String nombre, int cedula,
     await FirebaseAuth.instance
         .createUserWithEmailAndPassword(email: email, password: password);
     try {
-      String uid = FirebaseAuth.instance.currentUser.uid;
-      DocumentReference documentReference =
-          FirebaseFirestore.instance.collection('users').doc(uid);
-      FirebaseFirestore.instance.runTransaction((transaction) async {
-        transaction.set(documentReference, cliente);
-      });
+      var currentUser = FirebaseAuth.instance.currentUser;
+
+      if (currentUser != null) {
+        String uid = currentUser.uid;
+        DocumentReference documentReference =
+            FirebaseFirestore.instance.collection('users').doc(uid);
+        FirebaseFirestore.instance.runTransaction((transaction) async {
+          transaction.set(documentReference, cliente);
+        });
+      }
     } catch (e) {
       print(e);
     }
