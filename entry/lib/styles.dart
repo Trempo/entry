@@ -15,6 +15,12 @@ TextStyle tituloEntryLoginRegister = TextStyle(
   color: magnolia,
 );
 
+TextStyle rubik24darkPurple = TextStyle(
+    fontFamily: Rubik,
+    fontWeight: FontWeight.w700,
+    fontSize: 24,
+    color: darkPurple);
+
 TextStyle rubik18darkPurple = TextStyle(
   fontFamily: Rubik,
   fontWeight: FontWeight.w400,
