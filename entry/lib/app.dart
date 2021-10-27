@@ -1,6 +1,7 @@
 import 'package:entry/net/flutterfire.dart';
 import 'package:entry/screens/authentication/authentication.dart';
 import 'package:entry/screens/home/home.dart';
+import 'package:entry/screens/profile/profile.dart';
 import 'package:entry/screens/register/register.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,7 @@ import 'package:flutter/material.dart';
 const registerRoute = '/register';
 const authenticationRoute = '/authentication';
 const homeRoute = '/';
+const profileRoute = '/profile';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -43,6 +45,9 @@ class App extends StatelessWidget {
           break;
         case homeRoute:
           screen = isLoggedIn() ? Home() : Authentication();
+          break;
+        case profileRoute:
+          screen = isLoggedIn() ? Profile() : Authentication();
           break;
         default:
           return null;

@@ -1,6 +1,8 @@
 import 'package:entry/styles.dart';
 import 'package:flutter/material.dart';
 
+import '../app.dart';
+
 class NavBar extends StatefulWidget {
   NavBar({Key? key}) : super(key: key);
 
@@ -25,6 +27,7 @@ class _NavBarState extends State<NavBar> {
             topRight: Radius.circular(10.0),
           ),
           child: BottomNavigationBar(
+            onTap: _onItemTapped,
             showUnselectedLabels: false,
             showSelectedLabels: false,
             iconSize: 30,
@@ -51,5 +54,15 @@ class _NavBarState extends State<NavBar> {
             ],
           ),
         ));
+  }
+
+  void _onItemTapped(int index) {
+    switch (index) {
+      case 2:
+        Navigator.pushNamed(context, profileRoute);
+
+        break;
+      default:
+    }
   }
 }

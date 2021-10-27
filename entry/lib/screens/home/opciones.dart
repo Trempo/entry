@@ -24,8 +24,8 @@ class Opciones extends StatelessWidget {
                     margin: const EdgeInsets.fromLTRB(0, 0, 0, 12),
                     child: SvgPicture.asset(
                       'assets/images/undraw_Having_fun_re_vj4h.svg',
-                      height: 60,
                       width: MediaQuery.of(context).size.width * 0.224,
+                      height: MediaQuery.of(context).size.height * 0.08,
                       semanticsLabel: 'Discotecas',
                     ),
                   ),
@@ -47,7 +47,7 @@ class Opciones extends StatelessWidget {
                     child: SvgPicture.asset(
                       'assets/images/undraw_festivities_tvvj.svg',
                       width: MediaQuery.of(context).size.width * 0.224,
-                      height: 60,
+                      height: MediaQuery.of(context).size.height * 0.08,
                       semanticsLabel: 'Eventos',
                     ),
                   ),
@@ -69,7 +69,7 @@ class Opciones extends StatelessWidget {
                     child: SvgPicture.asset(
                       'assets/images/undraw_beer_xg5f.svg',
                       width: MediaQuery.of(context).size.width * 0.224,
-                      height: 60,
+                      height: MediaQuery.of(context).size.height * 0.08,
                       semanticsLabel: 'Discotecas',
                     ),
                   ),

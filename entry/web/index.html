@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -29,10 +30,28 @@
   <title>entry</title>
   <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyB7qxr6OarsjF3w9IkHVtfxzE4gGhfJLWY",
+      authDomain: "entry-efd6b.firebaseapp.com",
+      projectId: "entry-efd6b",
+      storageBucket: "entry-efd6b.appspot.com",
+      messagingSenderId: "508045167864",
+      appId: "1:508045167864:web:33cc985144136683b87f0d",
+      measurementId: "G-TQE226Z5LE"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app-check.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   <script>
     var serviceWorkerVersion = null;
     var scriptLoaded = false;
@@ -98,4 +117,5 @@
     }
   </script>
 </body>
+
 </html>
